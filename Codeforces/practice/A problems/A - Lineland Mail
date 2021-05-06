@@ -1,0 +1,15 @@
+n=int(input())
+a=list(map(int,input().split()))
+for i in range(n):
+    if i==0:
+        mi=abs(a[1]-a[0])
+        ma=abs(a[n-1]-a[0])
+    elif i==n-1:
+        mi=abs(a[n-1]-a[n-2])
+        ma=abs(a[n-1]-a[0])
+    else:
+        mi=min(abs(a[i]-a[i-1]),abs(a[i]-a[i+1]))
+        ma=max(abs(a[i]-a[0]),abs(a[i]-a[n-1]))
+    print(mi,ma)    
+    
+    
