@@ -1,0 +1,8 @@
+n,q=map(int,input().split())
+nl=list(map(int,input().split()))
+ql=list(map(int,input().split()))
+for i in ql:
+    index=nl.index(i)
+    print(index+1,"",end="")
+    nl[1:index+1]=nl[0:index]
+    nl[0]=i
