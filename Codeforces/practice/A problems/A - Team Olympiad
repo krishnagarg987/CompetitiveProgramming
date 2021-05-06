@@ -1,0 +1,21 @@
+n=int(input())
+a=list(map(int,input().split()))
+s=len(set(a))
+if s==3:
+    x=[]
+    y=[]
+    z=[]
+    m=min(a.count(1),a.count(2),a.count(3))
+    print(m)
+    for i in range(n):
+        if a[i]==1:
+            x.append(i+1)
+        elif a[i]==2:
+            y.append(i+1)
+        elif a[i]==3:
+            z.append(i+1)
+    b=list(zip(x,y,z))
+    for i in range(m):
+        print(*b[i])
+else:
+    print(0)
