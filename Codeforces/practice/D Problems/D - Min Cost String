@@ -1,0 +1,7 @@
+n,k=map(int,input().split())
+s=""
+for i in range(k):
+    s+=chr(97+i)
+    for j in range(i+1,k):
+        s+=chr(97+i)+chr(97+j)
+print((((n//k)+1)*s)[:n])        
