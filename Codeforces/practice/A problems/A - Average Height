@@ -1,0 +1,14 @@
+for i in range(int(input())):
+    n=int(input())
+    s=map(int,input().split())
+    o=[]
+    e=[]
+    for i in s:
+        if i%2==0:
+            e.append(i)
+        else:
+            o.append(i)
+    f=map(str,o+e)
+    s=" "
+    s=s.join(f)
+    print(s)
