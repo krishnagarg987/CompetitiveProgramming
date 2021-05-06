@@ -1,0 +1,11 @@
+for i in range(int(input())):
+    a,b,c=map(int,input().split())
+    x=pow(10,a-1)
+    y=pow(10,b-1)
+    if a<=b:
+        y+=pow(10,c-1)
+        print(x,y)
+    else:
+        x+=pow(10,c-1)
+        print(x,y)
+        
