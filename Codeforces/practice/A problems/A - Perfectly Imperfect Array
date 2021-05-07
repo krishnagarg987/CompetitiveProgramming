@@ -1,0 +1,19 @@
+from math import sqrt
+def solve(n):
+   sq_root = int(sqrt(n))
+   return (sq_root*sq_root) == n
+for i in range(int(input())):
+    n=int(input())
+    a=list(map(int,input().split()))
+    for i in range(n):
+        if not solve(a[i]):
+            print("YES")
+            break
+        if i==n-1:
+            if solve(a[i]):
+                print("NO")
+            else:
+                print("YES")
+                
+        
+        
