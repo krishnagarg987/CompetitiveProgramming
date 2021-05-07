@@ -1,0 +1,30 @@
+def check(s):
+    t=0
+    m=0
+    for i in range(n):
+        if s[i]=='T':
+            t+=1
+        else:
+            m+=1
+        if t<m:
+            return False
+    t=0
+    m=0
+    for i in range(n-1,-1,-1):
+        if s[i]=='T':
+            t+=1
+        else:
+            m+=1
+        if t<m:
+            return False
+    return True        
+for i in range(int(input())):
+    n=int(input())
+    s=input()
+    if s.count('T')==s.count('M')*2:
+        if check(s):
+            print("YES")
+        else:
+            print("NO")    
+    else:
+        print("NO")
