@@ -1,0 +1,18 @@
+for i in range(int(input())):
+    n=int(input())
+    if n<2050:
+        print(-1)
+    else:
+        x=205000000000000000
+        count=0
+        z=0
+        while(n>0):
+            if n-x<0 and n>=2050:
+                x=x//10
+            else:
+                n-=x
+                count+=1
+        if n==0:
+            print(count)
+        else:
+            print(-1)
