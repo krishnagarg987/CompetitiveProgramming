@@ -1,0 +1,10 @@
+for i in range(int(input())):
+    n=int(input())
+    a=list(map(int,input().split()))
+    s=list(set(a))
+    x=a.count(s[0])
+    y=a.count(s[1])
+    if x<y:
+        print(a.index(s[0])+1)
+    else:
+        print(a.index(s[1])+1)
