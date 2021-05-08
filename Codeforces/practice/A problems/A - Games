@@ -1,0 +1,12 @@
+n=int(input())
+a=[]
+b=[]
+for i in range(n):
+    x,y=list(map(int,input().split()))
+    a.append(x)
+    b.append(y)
+count=0    
+for i in range(n-1):
+    count+=b[(i+1):].count(a[i])
+    count+=a[(i+1):].count(b[i])
+print(count)    
