@@ -1,0 +1,7 @@
+n=int(input())
+s=input()
+b=str(s[0])
+for i in s:
+    if b[-1]!=i:
+        b+=str(i)
+print(n-len(b))      
