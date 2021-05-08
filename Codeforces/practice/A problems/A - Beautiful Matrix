@@ -1,0 +1,10 @@
+x=0
+y=0
+for i in range(5):
+    a=list(map(int,input().split()))
+    if 1 in a:
+        x=i
+        y=a.index(1)
+x1=abs(x-2)
+y1=abs(y-2)
+print(x1+y1)
