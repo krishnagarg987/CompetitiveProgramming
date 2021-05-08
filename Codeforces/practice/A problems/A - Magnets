@@ -1,0 +1,7 @@
+n=int(input())
+a=""
+for i in range(n):
+    a+=input()
+x=a.count("00")
+y=a.count("11")
+print(x+y+1)
