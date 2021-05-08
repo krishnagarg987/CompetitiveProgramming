@@ -1,0 +1,20 @@
+n=int(input())
+a=list(map(int,input().split()))
+turn=0
+b=[0,0]
+while(len(a)!=0):
+    if a[0]>a[-1]:
+        b[turn]+=a[0]
+        a.pop(0)
+    else:
+        b[turn]+=a[-1]
+        a.pop(-1)
+    if turn==0:
+        turn=1
+    else:
+        turn=0
+print(b[0],b[1])        
+        
+        
+    
+    
