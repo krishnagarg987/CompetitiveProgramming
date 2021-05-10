@@ -1,0 +1,22 @@
+n=int(input())
+a=list(map(int,input().split()))
+total=0
+count=0
+for i in a:
+    if i<0:
+        if total<=0:
+            count+=abs(i)
+            total+=i
+        else:
+            if total+i<0:
+                count+=abs(total+i)
+                total+=i
+            else:
+                total+=i
+    else:
+        if total<0:
+            total=0
+            total+=i
+        else:
+            total+=i
+print(count)
