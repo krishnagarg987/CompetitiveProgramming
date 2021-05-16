@@ -1,0 +1,11 @@
+n=int(input())
+x=y=0
+while(n>=500):
+    x+=1
+    n-=500
+while(n>=5):
+    y+=1
+    n-=5
+x*=1000
+y*=5
+print(x+y)
