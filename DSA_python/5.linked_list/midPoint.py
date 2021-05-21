@@ -30,12 +30,16 @@ def length(head):
         c+=1
         head=head.next
     return c+1    
-def midpoint(head):
-    for i in range((l-1)//2):
-        head=head.next
-    print(head.data)    
     
-a=[1,2,3,4,5,6,7,8,9,-1]  
+def midpoint(head):
+    slow=head
+    fast=head
+    while fast.next!=None and fast.next.next!=None:
+        slow=slow.next
+        fast=fast.next.next
+    print(slow.data)    
+    
+a=[1,2,3,4,5,6,7,8,-1]  
 head=linkedlist(a)
 printll(head)
 l=length(head)
