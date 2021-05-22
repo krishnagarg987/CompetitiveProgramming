@@ -2,9 +2,9 @@ class complex:
     def __init__(self,real,imag):
         self.real=real
         self.imag=imag
-    
+
     def printComplex(self):
-        if self.real==0 and self.imag==0:
+       if self.real==0 and self.imag==0:
             print(0)
         elif self.real==0:
             print(self.imag,"i")
