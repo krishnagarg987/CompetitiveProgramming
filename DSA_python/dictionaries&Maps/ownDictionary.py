@@ -27,6 +27,9 @@ class dict:
         node.next=data
         self.bucket[index]=node
         self.count+=1
+        loadFactor=self.count/self.bucketsize
+        if loadFactor>=0.7:
+            self.rehash()
 
     def getValue(self,key):
         hashedValue=hash(key)
@@ -56,6 +59,15 @@ class dict:
             data=data.next
         return False
 
+    def rehash(self):
+        temp=self.bucket
+        self.bucket=[None for i in range(2*self.bucketsize)]
+        self.bucketsize=2*self.bucketsize
+        self.count=0
+        for head in temp:
+            while head is not None:
+                self.insert(head.key,head.value)
+                head=head.next
 
 d=dict()
 d.insert(5,25)
