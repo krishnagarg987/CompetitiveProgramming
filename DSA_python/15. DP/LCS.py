@@ -6,7 +6,6 @@ def lcs(s1,s2):
         if not dp.get(s1[1:]+s2[1:],False):
             ans=lcs(s1[1:],s2[1:])
             dp[s1[1:]+s2[1:]]=ans
-
         else:
             ans=dp[s1[1:]+s2[1:]]
         dp[s1+s2]=ans+1
