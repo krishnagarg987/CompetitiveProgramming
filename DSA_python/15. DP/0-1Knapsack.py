@@ -12,7 +12,7 @@ def knapsack(W,w,v,i):
             dp[i+1][W-w[i]]=smallanswer
             ans2=v[i]+smallanswer
         else:
-            ans2=[i+1][W-w[i]]
+            ans2=dp[i+1][W-w[i]]
         ans=max(ans1,ans2)
     else:
         if dp[i + 1][W] == -1:
