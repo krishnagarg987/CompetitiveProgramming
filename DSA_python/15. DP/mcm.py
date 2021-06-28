@@ -19,8 +19,8 @@ def mcm(m,i,j):
         minvalue=min(minvalue,currentvalue)
     dp[i-1][j-1]=minvalue
     return dp[i-1][j-1]
-m=[2,3,4,5,6]
+m=[2,3,4,5,6,3,7]
 n=len(m)-1
 dp=[[-1 for i in range(n)] for j in range(n)]
-print(mcm(m,1,4))
+print(mcm(m,1,6))
 print(dp)
