@@ -18,26 +18,29 @@ class graph:
         return True if self.__adjacencyMatrix[v1][v2]>0 else False
 
     def bfs(self):
-        q=Queue()
-        q.put(0)
         visited=[False for i in range(self.nVertices)]
-        visited[0]=True
-        while q.empty() is False:
-            el=q.get()
-            print(el)
-            for i in range(self.nVertices):
-                if self.__adjacencyMatrix[el][i]>0 and visited[i] is False:
-                    q.put(i)
-                    visited[i]=True
+        for i in range(self.nVertices):
+            if visited[i] is False:
+                q=Queue()
+                q.put(i)
+                visited[i]=True
+                while q.empty() is False:
+                    el=q.get()
+                    print(el)
+                    for i in range(self.nVertices):
+                        if self.__adjacencyMatrix[el][i]>0 and visited[i] is False:
+                            q.put(i)
+                            visited[i]=True
 
     def __str__(self):
         return str(self.__adjacencyMatrix)
 
 
-g=graph(5)
+g=graph(7)
 g.addEdge(0,1)
 g.addEdge(0,2)
 g.addEdge(1,3)
 g.addEdge(2,3)
 g.addEdge(2,4)
+g.addEdge(5,6)
 g.bfs()
