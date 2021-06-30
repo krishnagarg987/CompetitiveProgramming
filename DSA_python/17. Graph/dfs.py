@@ -25,18 +25,20 @@ class graph:
                 self.__dfshelper(i,visited)
 
     def dfs(self):
-        sv=0
         visited=[False for i in range(self.nVertices)]
-        self.__dfshelper(sv,visited)
+        for i in range(self.nVertices):
+            if visited[i] is False:
+                self.__dfshelper(i,visited)
 
     def __str__(self):
         return str(self.__adjacencyMatrix)
 
 
-g=graph(5)
+g=graph(7)
 g.addEdge(0,1)
 g.addEdge(0,2)
 g.addEdge(1,3)
 g.addEdge(2,3)
 g.addEdge(2,4)
+g.addEdge(5,6)
 g.dfs()
