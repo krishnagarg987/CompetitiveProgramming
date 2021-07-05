@@ -24,6 +24,7 @@ def merge(a,x,y):
     while c<len(y):
         d.append(y[c])
         c+=1
+    print(a,d)
     for i in range(len(a)):
         a[i]=d[i]
 
