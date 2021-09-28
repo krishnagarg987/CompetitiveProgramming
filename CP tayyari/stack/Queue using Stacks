@@ -1,0 +1,38 @@
+https://www.geeksforgeeks.org/queue-using-stacks/
+
+
+class queue:
+    def __init__(self):
+        self.li=[]
+        self.count=0
+    
+    def enqueue(self,item):
+        self.li.append(item)
+        self.count+=1
+    
+    def isempty(self):
+        return self.count==0
+    
+    def dequeue(self):
+        if self.isempty()==True:
+            print("queue is empty")
+            return 
+        l2=[]
+        for i in range(self.count):
+            x=self.li.pop()
+            l2.append(x)
+        y=l2.pop()
+        self.count-=1
+        for i in range(self.count):
+            x=l2.pop()
+            self.li.append(x)
+        return y
+
+q=queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
+print(q.dequeue())
