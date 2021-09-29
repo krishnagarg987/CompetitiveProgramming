@@ -1,0 +1,79 @@
+https://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/
+
+
+class new_node:
+    def __init__(self,data):
+        self.prev=None
+        self.data=data
+        self.next=None
+
+class stack:
+    def __init__(self):
+        self.head=None
+        self.count=0
+        self.mid=None
+    
+    def push(self,item):
+        node=new_node(item)
+        if self.count==0:
+            self.head=node
+            self.count+=1
+            self.mid=self.head
+        else:
+            node.next=self.head
+            self.head.prev=node
+            self.head=node
+            self.count+=1
+            if self.count%2==1:
+                self.mid=self.mid.prev
+                
+    def find_middle(self):
+        return self.mid.data
+    
+    def pop(self):
+        if self.count==0:
+            print("stack empty")
+            return
+        temp=self.head.data
+        self.head=self.head.next
+        self.head.prev=None
+        self.count-=1
+        if self.count%2==0:
+            self.mid=self.mid.next
+        return temp
+    
+    def delete_middle(self):
+        if self.count==0:
+            print("stack empty")
+            return
+        if self.count==1:
+            print(str(self.mid.data)+" is deleted")
+            self.head=None
+            self.count=0
+            self.mid=None
+            return
+        if self.count==2:
+            print(str(self.mid.data) +"is deleted")
+            self.head=self.head.next
+            self.count=1
+            self.mid=self.head
+            return
+        print(str(self.mid.data)+" is deleted")
+        self.mid.next.prev=self.mid.prev
+        self.mid.prev.next=self.mid.next
+        self.count-=1
+        return
+        
+
+ms = stack()
+ms.push(11)
+ms.push(22)
+ms.push(33)
+ms.push(44)
+ms.push(55)
+ms.push(66)
+ms.push(77)
+print("Item popped is " + str(ms.pop()))
+print("Item popped is " + str(ms.pop()))
+print("Middle Element is " + str(ms.find_middle()))
+ms.delete_middle()
