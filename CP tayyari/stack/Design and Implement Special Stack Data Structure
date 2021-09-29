@@ -1,0 +1,52 @@
+https://www.geeksforgeeks.org/design-and-implement-special-stack-data-structure/
+
+
+class stack:
+    def __init__(self):
+        self.stack=[]
+        self.auxstack=[]
+        self.count=0
+        self.maximum=100
+    
+    def push(self,item):
+        if self.isfull():
+            print("stack full")
+            return
+        if self.count==0:
+            self.stack.append(item)
+            self.auxstack.append(item)
+        else:
+            if item>=self.auxstack[-1]:
+                self.stack.append(item)
+                self.auxstack.append(self.auxstack[-1])
+            else:
+                self.stack.append(item)
+                self.auxstack.append(item)
+        self.count+=1
+    
+    def pop(self):
+        if self.isempty():
+            print("stack empty")
+            return 
+        self.auxstack.pop()
+        return self.stack.pop()
+    
+    def isempty(self):
+        return self.count==0
+    
+    def isfull(self):
+        return self.count==self.maximum
+    
+    def getmin(self):
+        return self.auxstack[-1]
+
+
+s = stack()
+s.push(10)
+s.push(20)
+s.push(30)
+print(s.getmin())
+s.push(5)
+print(s.getmin())
+        
+            
