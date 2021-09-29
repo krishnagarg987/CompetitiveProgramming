@@ -1,0 +1,55 @@
+https://www.geeksforgeeks.org/implement-stack-using-queue/
+
+
+class stack:
+    def __init__(self):
+        self.array1=[]
+        self.array2=[]
+        self.count=0
+    
+    def push(self,item):
+        self.array1.append(item)
+        self.count+=1
+    
+    def pop(self):
+        if self.count==0:
+            print("stack full")
+            return
+        else:
+            for i in range(self.count-1):
+                x=self.array1.pop(0)
+                self.array2.append(x)
+            y=self.array1.pop(0)
+            self.count-=1
+            self.array1,self.array2=self.array2,self.array1
+            return y
+    
+    def top(self):
+        if self.count==0:
+            print("stack empty")
+            return
+        for i in range(self.count-1):
+            x=self.array1.pop(0)
+            self.array2.append(x)
+        temp=self.array1.pop(0)
+        self.array2.append(temp)
+        self.array1,self.array2=self.array2,self.array1
+        return temp
+    
+    def size(self):
+        return self.count
+
+s=stack()
+s.push(1)
+s.push(2)
+s.push(3)
+s.push(4)
+print(s.size())
+print(s.top())
+s.pop()
+print(s.top())
+s.pop()
+print(s.top())
+print(s.size())
+
+            
