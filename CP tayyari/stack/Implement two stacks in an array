@@ -1,0 +1,64 @@
+https://www.geeksforgeeks.org/implement-two-stacks-in-an-array/
+
+
+class twostacks:
+    def __init__(self,n):
+        self.size=n
+        self.array=[None]*n
+        self.p1=-1
+        self.p2=n
+    
+    def push1(self,item):
+        if self.p2-self.p1>1:
+            self.p1+=1
+            self.array[self.p1]=item
+        else:
+            print("stack full")
+    
+    def push2(self,item):
+        if self.p2-self.p1>1:
+            self.p2-=1
+            self.array[self.p2]=item
+        else:
+            print("stack full")
+    
+    def pop1(self):
+        if self.p1!=-1:
+            x=self.array[self.p1]
+            self.array[self.p1]=None
+            self.p1-=1
+            return x
+        print("stack empty")
+    
+    def pop2(self):
+        if self.p2!=self.size:
+            x=self.array[self.p2]
+            self.array[self.p2]=None
+            self.p2+=1
+            return x
+        print("stack empty")
+
+ts = twostacks(5)
+ts.push1(5)
+ts.push2(10)
+ts.push2(15)
+ts.push1(11)
+ts.push2(7)
+ 
+print("Popped element from stack1 is " + str(ts.pop1()))
+ts.push2(40)
+print("Popped element from stack2 is " + str(ts.pop2()))
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
